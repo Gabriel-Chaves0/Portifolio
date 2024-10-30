@@ -13,7 +13,7 @@ const StyledToolBar = styled(Toolbar)(({theme}) => ({
         <StyledToolBar>
             <MenuItem>About</MenuItem>
             <MenuItem>Projects</MenuItem>
-            <StyledButton>Clicaaaaaaaaaaa</StyledButton>
+            <MenuItem>Skills</MenuItem>
         </StyledToolBar>
     </AppBar>
   );

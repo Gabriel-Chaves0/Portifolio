@@ -1,9 +1,12 @@
-import { Container, styled, Typography } from "@mui/material";
+import { Box, Container, styled, Typography } from "@mui/material";
 import Perfil from "../../../../assets/images/Foto_apesentando.jpeg";
 import { Grid } from "@mui/material";
 import BackupIcon from '@mui/icons-material/Backup';
 import EmailIcon from '@mui/icons-material/Email';
 import StyledButton from "../../../../components/styledButton";
+import { AnimatedBackground } from "../../../../components/AnimatedBackground";
+//import React, { useEffect } from "react";
+//import "./style.css";
 
 const Hero = () => {
   const StyledHero = styled("div")(() => ({
@@ -14,10 +17,22 @@ const Hero = () => {
   }));
 
 const StyledImg = styled("img")(({theme}) => ({
-    width: "80%",
+    width: "75%",
     borderRadius: "50%",
     border: `1px solid ${theme.palette.primary.contrastText}`
   }));
+
+//  useEffect(() => {
+//    // Coloque aqui o código JavaScript para animação
+//    const script = document.createElement("script");
+//    script.src = "/src/components/animated-background/src/script.js"; 
+//    script.async = true;
+//    document.body.appendChild(script);
+
+//    return () => {
+//      document.body.removeChild(script);  // Limpeza do script quando o componente desmontar
+//    };
+//  }, []);
 
   return (
     <>
@@ -25,20 +40,30 @@ const StyledImg = styled("img")(({theme}) => ({
         <Container maxWidth="lg">
           <Grid container spacing={2}>
             <Grid item xs={12} md={5}>
-              <StyledImg src={Perfil} />
+
+              <Box position="relative">
+                <Box position="absolute" width={"150%"} top={-100} right={0} >
+                  <AnimatedBackground />
+                </Box>
+                <Box position="relative" textAlign="center" >
+                  <StyledImg src={Perfil} />
+                </Box>
+
+              </Box>
+
             </Grid>
             <Grid item xs={12} md={7}>
-              <Typography color="primary" variant="h1" textAlign="center">Chaves aqui</Typography>
-              <Typography color="secondary.contrastText" variant="h2" textAlign="center">Keep it simple</Typography>
-              <Grid container display="flex" justifyContent="center">
+              <Typography color="primary" variant="h1" textAlign="center" pb={1}>Chaves aqui</Typography>
+              <Typography color="secondary.contrastText" variant="h2" textAlign="center" pb={2}>Keep it simple</Typography>
 
-                <Grid item xs={12} md={3} display="flex" justifyContent="center">
+              <Grid container display="flex" justifyContent="center" spacing={3} pt={2}>
+                <Grid item xs={12} md={4} display="flex" justifyContent="center">
                   <StyledButton>
                     <BackupIcon/>
                       <Typography>Download CV</Typography>
                   </StyledButton> 
                 </Grid>
-                <Grid item xs={12} md={3} display="flex" justifyContent="center">
+                <Grid item xs={12} md={4} display="flex" justifyContent="center">
                   <StyledButton>
                     <EmailIcon/>
                     <Typography>Contact</Typography>

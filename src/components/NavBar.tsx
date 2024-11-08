@@ -1,6 +1,5 @@
 import { AppBar, Grid, MenuItem, styled } from '@mui/material';
 import { IconButton, Toolbar, Typography } from '@mui/material';
-import StyledButton from './styledButton';
 
 const NavBar = () => {
 

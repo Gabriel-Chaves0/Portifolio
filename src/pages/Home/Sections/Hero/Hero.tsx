@@ -58,13 +58,13 @@ const StyledImg = styled("img")(({theme}) => ({
 
               <Grid container display="flex" justifyContent="center" spacing={3} pt={2}>
                 <Grid item xs={12} md={4} display="flex" justifyContent="center">
-                  <StyledButton>
+                  <StyledButton onClick={() => console.log("Download")}>
                     <BackupIcon/>
                       <Typography>Download CV</Typography>
                   </StyledButton> 
                 </Grid>
                 <Grid item xs={12} md={4} display="flex" justifyContent="center">
-                  <StyledButton>
+                  <StyledButton  onClick={() => console.log("Contact")}>
                     <EmailIcon/>
                     <Typography>Contact</Typography>
                   </StyledButton>

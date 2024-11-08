@@ -22,6 +22,17 @@ const StyledImg = styled("img")(({theme}) => ({
     border: `1px solid ${theme.palette.primary.contrastText}`
   }));
 
+  const handleDownloadCV = () => {
+    const link = document.createElement("a");
+    link.href = "/assets/Gabriel Chaves cv.pdf"; 
+    link.download = "Gabriel Chaves cv.pdf";  // Nome do arquivo ao baixar
+    link.click();
+  };
+
+  const handleContactClick = () => {
+    window.location.href = "mailto:g.chaves0110@gmail.com?subject=Contato via Portfólio";
+  };
+
 //  useEffect(() => {
 //    // Coloque aqui o código JavaScript para animação
 //    const script = document.createElement("script");
@@ -58,13 +69,13 @@ const StyledImg = styled("img")(({theme}) => ({
 
               <Grid container display="flex" justifyContent="center" spacing={3} pt={2}>
                 <Grid item xs={12} md={4} display="flex" justifyContent="center">
-                  <StyledButton onClick={() => console.log("Download")}>
+                  <StyledButton onClick={handleDownloadCV}>
                     <BackupIcon/>
                       <Typography>Download CV</Typography>
                   </StyledButton> 
                 </Grid>
                 <Grid item xs={12} md={4} display="flex" justifyContent="center">
-                  <StyledButton  onClick={() => console.log("Contact")}>
+                  <StyledButton  onClick={handleContactClick}>
                     <EmailIcon/>
                     <Typography>Contact</Typography>
                   </StyledButton>

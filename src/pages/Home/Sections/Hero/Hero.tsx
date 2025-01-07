@@ -5,7 +5,8 @@ import BackupIcon from '@mui/icons-material/Backup';
 import EmailIcon from '@mui/icons-material/Email';
 import StyledButton from "../../../../components/styledButton";
 import { AnimatedBackground } from "../../../../components/AnimatedBackground";
-//import React, { useEffect } from "react";
+import Projects from "../Projetos/Projetos";
+import React, { useRef } from "react";
 //import "./style.css";
 
 const Hero = () => {
@@ -25,25 +26,13 @@ const StyledImg = styled("img")(({theme}) => ({
   const handleDownloadCV = () => {
     const link = document.createElement("a");
     link.href = "/assets/Gabriel Chaves cv.pdf"; 
-    link.download = "Gabriel Chaves cv.pdf";  // Nome do arquivo ao baixar
+    link.download = "Gabriel Chaves cv.pdf"; 
     link.click();
   };
 
   const handleContactClick = () => {
     window.location.href = "mailto:g.chaves0110@gmail.com?subject=Contato via Portfólio";
   };
-
-//  useEffect(() => {
-//    // Coloque aqui o código JavaScript para animação
-//    const script = document.createElement("script");
-//    script.src = "/src/components/animated-background/src/script.js"; 
-//    script.async = true;
-//    document.body.appendChild(script);
-
-//    return () => {
-//      document.body.removeChild(script);  // Limpeza do script quando o componente desmontar
-//    };
-//  }, []);
 
   return (
     <>
@@ -84,8 +73,17 @@ const StyledImg = styled("img")(({theme}) => ({
               </Grid>
             </Grid>
           </Grid>
+          <Grid item xs={12}>
+            <Typography color="secondary.contrastText" variant="h3" textAlign="center" pt={2}>Desenvolvedor Web FullStack</Typography>
+          </Grid>
         </Container>
       </StyledHero>
+
+      <Box id="projects-section" mt={2} width="100%" bgcolor="#1C1C1C" pt={4} pb={4}>
+        <Container maxWidth="lg">
+          <Projects />
+        </Container>
+      </Box>
     </>
   );
 }

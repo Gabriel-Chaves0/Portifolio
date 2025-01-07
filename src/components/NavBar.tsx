@@ -11,7 +11,12 @@ const StyledToolBar = styled(Toolbar)(({theme}) => ({
     <AppBar position="absolute" color="secondary">
         <StyledToolBar>
             <MenuItem>About</MenuItem>
-            <MenuItem>Projects</MenuItem>
+            <MenuItem onClick={() => {
+                const section = document.getElementById("projects-section");
+                if (section) {
+                    section.scrollIntoView({ behavior: "smooth" });
+                }
+            }}>Projects</MenuItem>
             <MenuItem>Skills</MenuItem>
         </StyledToolBar>
     </AppBar>
